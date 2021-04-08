@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+struct link_list
+{
+   Next *link_list
+};
+
+
 int main(int argc, char *argv[]) {
    FILE *in = NULL, *out = NULL;
    in = stdin;
