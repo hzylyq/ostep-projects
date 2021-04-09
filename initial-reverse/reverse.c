@@ -3,6 +3,12 @@
 #include <sys/stat.h>
 #include <string.h>
 
+handle_error(char *msg)
+{
+    fprintf(stderr, msg);
+    exit(EXIT_FAILURE);
+}
+
 typedef struct link_list
 {
     char *line;
@@ -16,15 +22,12 @@ int main(int argc, char *argv[])
     out = stdout;
 
     // reverse a.txt
-    if (argc == 2)
+    if ((argc == 2) && (fopen(argv[1], "r") == NULL))
     {
-        in = fopen(argv[1], "r");
-        // 打开失败
-        if (in == NULL)
-        {
-            fprintf(stderr, "reverse: can't open file '%s'\n", argv[1]);
-            exit(EXIT_FAILURE);
-        }
+        char *msg;
+        sprintf(msg, "")
+        
+        handle_error();
     }
 
     // reverse a.txt b.txt
@@ -115,12 +118,12 @@ int main(int argc, char *argv[])
         else
         {
             link_list *tmp = malloc(sizeof(link_list));
-            if (tmp == NULL) {
+            if (tmp == NULL)
+            {
                 free(head);
                 fprintf(stderr, "reverse: malloc failed\n");
                 exit(EXIT_FAILURE);
             }
-            
         }
     }
 
