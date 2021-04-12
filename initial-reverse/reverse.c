@@ -30,12 +30,12 @@ int main(int argc, char *argv[]) {
     if (argc == 3) {
         // 打开失败
         if ((in = fopen(argv[1], "r")) == NULL) {
-            fprintf(stderr, "reverse: can't open file '%s'\n", argv[1]);
+            fprintf(stderr, "reverse: cannot open file '%s'\n", argv[1]);
             exit(EXIT_FAILURE);
         }
 
         if ((out = fopen(argv[2], "w")) == NULL) {
-            fprintf(stderr, "reverse: can't open file '%s'\n", argv[2]);
+            fprintf(stderr, "reverse: cannot open file '%s'\n", argv[2]);
             exit(EXIT_FAILURE);
         }
 
@@ -52,7 +52,7 @@ int main(int argc, char *argv[]) {
     }
 
     if (argc > 3) {
-        handle_error("usage: reverse <input> <output>");
+        handle_error("usage: reverse <input> <output>\n");
     }
 
     // 用一个链表来存放数据
