@@ -1,2 +1,5 @@
 .vscode
 cmake-build-debug
+*/tests-out
+initial-utilities/wgrep/tests-out
+initial-utilities/wgrep/wgrep
