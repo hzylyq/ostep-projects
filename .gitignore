@@ -3,3 +3,6 @@ cmake-build-debug
 */tests-out
 initial-utilities/wgrep/tests-out
 initial-utilities/wgrep/wgrep
+initial-utilities/wzip/tests-out
+initial-utilities/wzip/tests
+initial-utilities/wzip/wzip
