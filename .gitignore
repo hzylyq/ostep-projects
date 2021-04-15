@@ -6,3 +6,6 @@ initial-utilities/wgrep/wgrep
 initial-utilities/wzip/tests-out
 initial-utilities/wzip/tests
 initial-utilities/wzip/wzip
+initial-utilities/wunzip/tests-out
+initial-utilities/wunzip/tests
+initial-utilities/wunzip/wunzip
