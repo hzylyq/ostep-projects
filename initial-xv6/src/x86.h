@@ -1,8 +1,30 @@
-//
-// Created by lvchao on 2021/4/15.
-//
+struct trapframe {
+    // registers as pushed by pusha
+    uint edi;
+    uint esi;
+    uint ebp;
+    uint oesp;      // useless & ignored
+    uint ebx;
+    uint edx;
+    uint ecx;
+    uint eax;
 
-#ifndef OSTEP_PROJECTS_X86_H
-#define OSTEP_PROJECTS_X86_H
+    // rest of trap frame
+    ushort es;
+    ushort padding1;
+    ushort ds;
+    ushort padding2;
+    uint trapno;
 
-#endif //OSTEP_PROJECTS_X86_H
+    // below here defined by x86 hardware
+    uint err;
+    uint eip;
+    ushort cs;
+    ushort padding3;
+    uint eflags;
+
+    // below here only when crossing rings, such as from user to kernel
+    uint esp;
+    ushort ss;
+    ushort padding4;
+};
