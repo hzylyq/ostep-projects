@@ -1,7 +1,4 @@
-//
-// Created by lvchao on 2021/4/15.
-//
-
+#include "syscall.h"
 
 static int (*syscalls[])(void) = {
         [SYS_chdir]   sys_chdir,
@@ -26,12 +23,11 @@ static int (*syscalls[])(void) = {
         [SYS_write]   sys_write,
 };
 
-void syscall(void)
-{
+void syscall(void) {
     int num;
 
     num = cp->tf->eax;
-    if(num >= 0 && num < NELEM(syscalls) && syscalls[num])
+    if (num >= 0 && num < NELEM(syscalls) && syscalls[num])
         cp->tf->eax = syscalls[num]();
     else {
         cprintf("%d %s: unknown sys call %d\n",
