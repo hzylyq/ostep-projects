@@ -22,7 +22,7 @@ section](https://github.com/remzi-arpacidusseau/ostep-projects/blob/master/initi
 
 More information about xv6, including a very useful book written by the MIT
 folks who built xv6, is available
-[here](https://pdos.csail.mit.edu/6.828/2017/xv6.html). Do note, however, that
+[here](https://pdos.csail.mit.edu/6.828/2020/xv6.html). Do note, however, that
 we use a slightly older version of xv6 (for various pedagogical reasons), and
 thus the book may not match our code base exactly.
 

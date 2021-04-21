@@ -1,6 +1,6 @@
 
 // Gate descriptors for interrupts and traps
-struct gatedesc {
+struct gate_desc {
     uint off_15_0 : 16;   // low 16 bits of offset in segment
     uint cs : 16;         // code segment selector
     uint args : 5;        // # args, 0 for interrupt/trap gates
@@ -13,20 +13,20 @@ struct gatedesc {
 };
 
 // Set up a normal interrupt/trap gate descriptor.
-// - istrap: 1 for a trap (= exception) gate, 0 for an interrupt gate.
+// - is_trap: 1 for a trap (= exception) gate, 0 for an interrupt gate.
 //   interrupt gate clears FL_IF, trap gate leaves FL_IF alone
 // - sel: Code segment selector for interrupt/trap handler
 // - off: Offset in code segment for interrupt/trap handler
 // - dpl: Descriptor Privilege Level -
 //        the privilege level required for software to invoke
 //        this interrupt/trap gate explicitly using an int instruction.
-#define SETGATE(gate, istrap, sel, off, d)                \
+#define SETGATE(gate, is_trap, sel, off, d)                \
 {                                                         \
   (gate).off_15_0 = (uint) (off) & 0xffff;                \
   (gate).cs = (sel);                                      \
   (gate).args = 0;                                        \
   (gate).rsv1 = 0;                                        \
-  (gate).type = (istrap) ? STS_TG32 : STS_IG32;           \
+  (gate).type = (is_trap) ? STS_TG32 : STS_IG32;           \
   (gate).s = 0;                                           \
   (gate).dpl = (d);                                       \
   (gate).p = 1;                                           \

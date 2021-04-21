@@ -9,3 +9,8 @@ initial-utilities/wzip/wzip
 initial-utilities/wunzip/tests-out
 initial-utilities/wunzip/tests
 initial-utilities/wunzip/wunzip
+initial-xv6/src/Makefile.test
+initial-xv6/src/test_1.c
+initial-xv6/src/test_2.c
+initial-xv6/tests
+initial-xv6/tests-out
