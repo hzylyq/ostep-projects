@@ -1,3 +1,4 @@
+#include "x86.h"
 
 void tvinit(void) {
     int i;
@@ -11,7 +12,7 @@ void tvinit(void) {
     initlock(&tickslock, "time");
 }
 
-void trap(struct trapframe *tf) {
+void trap(struct trap_frame *tf) {
     if (tf->trapno == T_SYSCALL) {
         if (cp->killed)
             exit();

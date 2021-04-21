@@ -1,4 +1,7 @@
-struct trapframe {
+#define uint unsigned int
+#define ushort unsigned short
+
+struct trap_frame {
     // registers as pushed by pusha
     uint edi;
     uint esi;
@@ -14,7 +17,7 @@ struct trapframe {
     ushort padding1;
     ushort ds;
     ushort padding2;
-    uint trapno;
+    uint trap_no;
 
     // below here defined by x86 hardware
     uint err;
