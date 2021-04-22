@@ -9,10 +9,6 @@ mpmain(void) {
     idtinit();
 }
 
-void
-idtinit(void) {
-    lidt(idt, sizeof(idt));
-}
 
 static inline void
 lidt(struct gatedesc *p, int size) {
